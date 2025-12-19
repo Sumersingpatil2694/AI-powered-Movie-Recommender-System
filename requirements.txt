@@ -6,3 +6,5 @@ requests
 fuzzywuzzy
 python-Levenshtein
 python-dotenv
+gdown
+
