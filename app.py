@@ -4,6 +4,7 @@
 from dotenv import load_dotenv
 import os
 load_dotenv()
+import gdown
 import streamlit as st
 import pandas as pd
 import pickle
@@ -36,6 +37,24 @@ class Config:
     CACHE_TIME = 3600  
     REQUEST_TIMEOUT = 15 
     MAX_RETRIES = 3 
+
+# ===============================================================
+# 📦 LOAD SIMILARITY MATRIX (Google Drive - Large File Support)
+# ===============================================================
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+SIM_PATH = os.path.join(BASE_DIR, "similarity.pkl")
+
+FILE_ID = "1TWQDozbgDcFYOWkmkiFVKVwhe0g9izdk"
+SIM_URL = f"https://drive.google.com/uc?id={FILE_ID}"
+
+if not os.path.exists(SIM_PATH):
+    with st.spinner("⬇️ Downloading similarity matrix..."):
+        gdown.download(SIM_URL, SIM_PATH, quiet=False)
+
+with open(SIM_PATH, "rb") as f:
+    similarity = pickle.load(f)
  
 # ===============================================================
 # 📦 DATA LOADING FUNCTIONS
