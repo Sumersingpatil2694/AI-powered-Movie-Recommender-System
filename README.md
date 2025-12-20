@@ -4,12 +4,11 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28.0-red.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/Status-Active-success.svg)
 
 **An AI-Powered Movie Recommendation System that suggests the best movies based on your preferences**
 
-[Live Demo](#) • [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Screenshots](#-screenshots)
+[Live Demo](https://ai-powered-movie-recommender-system-gujjmxpslzqqlvypgiju7v.streamlit.app/) • [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Screenshots](#-screenshots)
 
 </div>
 
@@ -67,7 +66,7 @@
 
 ### 🎨 UI Features
 
-- 🌙 **Dark Theme** - Netflix-inspired design
+- 🌙 **Dark Theme** - Red And Black-inspired design
 - 🎭 **Animated Cards** - Smooth hover effects
 - 📱 **Responsive Layout** - Works on all devices
 - 🎨 **Custom Styling** - Beautiful gradient backgrounds
@@ -829,48 +828,15 @@ To request a feature:
 - [ ] Improve code documentation
 - [ ] Add type hints throughout codebase
 
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2024 [Your Name]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
----
-
 ## 📞 Contact
 
 ### Developer Information
 
 **Your Name**
-- 🐙 GitHub: [@yourusername](https://github.com/yourusername)
-- 💼 LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- 📧 Email: your.email@example.com
-- 🌐 Portfolio: [yourwebsite.com](https://yourwebsite.com)
-- 🐦 Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- 🐙 GitHub: [@Sumersingpatil2694](https://github.com/Sumersingpatil2694)
+- 💼 LinkedIn: [Your Profile](linkedin.com/in/sumersing-patil-839674234)
+- 📧 Email: your.sumerrajput0193@gmail.com
+- 🐦 Twitter: [@yourhandle](https://x.com/SumerRajput2694)
 
 ### Project Links
 
