@@ -4,7 +4,6 @@
 from dotenv import load_dotenv
 import os
 load_dotenv()
-import gdown
 import streamlit as st
 import pandas as pd
 import pickle
@@ -37,24 +36,6 @@ class Config:
     CACHE_TIME = 3600  
     REQUEST_TIMEOUT = 15 
     MAX_RETRIES = 3 
-
-# ===============================================================
-# 📦 LOAD SIMILARITY MATRIX (Google Drive - Large File Support)
-# ===============================================================
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-SIM_PATH = os.path.join(BASE_DIR, "similarity.pkl")
-
-FILE_ID = "1TWQDozbgDcFYOWkmkiFVKVwhe0g9izdk"
-SIM_URL = f"https://drive.google.com/uc?id={FILE_ID}"
-
-if not os.path.exists(SIM_PATH):
-    with st.spinner("⬇️ Downloading similarity matrix..."):
-        gdown.download(SIM_URL, SIM_PATH, quiet=False)
-
-with open(SIM_PATH, "rb") as f:
-    similarity = pickle.load(f)
  
 # ===============================================================
 # 📦 DATA LOADING FUNCTIONS
@@ -402,6 +383,43 @@ def apply_custom_css():
             font-size: 2em !important;
         }
     }
+/* ================= OTT CAPSULE BUTTONS ================= */
+
+.ott-capsule-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.ott-capsule {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px; /* capsule shape */
+    background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.ott-capsule:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 18px rgba(229,9,20,0.5);
+    border-color: #e50914;
+}
+
+.ott-capsule img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
     </style>
     """, unsafe_allow_html=True)
 
@@ -499,6 +517,21 @@ def fetch_movie_details(movie_id):
         'append_to_response': 'videos,credits,similar,reviews'
     }
     return make_api_request(url, params)
+@st.cache_data(ttl=Config.CACHE_TIME)
+def fetch_watch_providers(movie_id, country="IN"):
+    """
+    Fetch OTT platforms where the movie is available
+    Uses TMDB Watch Providers API
+    """
+    url = f"{Config.BASE_URL}/movie/{movie_id}/watch/providers"
+    params = {"api_key": Config.API_KEY}
+
+    data = make_api_request(url, params)
+
+    if data and "results" in data and country in data["results"]:
+        return data["results"][country]
+
+    return None
 
 @st.cache_data(ttl=Config.CACHE_TIME)
 def fetch_poster(movie_id):
@@ -934,6 +967,45 @@ def display_movie_details(movie_id):
         <div class='rating-badge'>🕒 {runtime} min</div>
         """, unsafe_allow_html=True)
         
+        # ================= FIXED OTT CAPSULE PLATFORMS =================
+        providers = fetch_watch_providers(movie_id)
+
+        if providers and "flatrate" in providers:
+            st.markdown("### 📺 Available On")
+
+            # Build the HTML properly with proper escaping
+            capsule_html = '<div class="ott-capsule-wrapper">'
+
+            for p in providers["flatrate"]:
+            # ✅ 1. Safe access with .get() method
+             logo_path = p.get("logo_path", "")
+            if logo_path:
+                logo = Config.IMAGE_BASE.replace("/w500", "/w92") + logo_path
+            else:
+                # ✅ 2. Placeholder for missing logos
+                logo = "https://via.placeholder.com/22"
+            
+            name = p.get("provider_name", "Unknown")
+            link = providers.get("link", f"https://www.themoviedb.org/movie/{movie_id}/watch")
+
+            # ✅ 3. Triple single quotes for better escaping
+            capsule_html += f'''
+        <a href="{link}" target="_blank" style="text-decoration:none;">
+            <div class="ott-capsule">
+            <img src="{logo}" alt="{name}">
+            <span>{name}</span>
+            </div>
+        </a>
+        '''
+
+            capsule_html += '</div>'
+
+            # ✅ 4. Render the HTML
+            st.markdown(capsule_html, unsafe_allow_html=True)
+
+        else:
+            st.info("📭 Currently not available on OTT platforms in India")
+
         # Genres as tags
         genres = data.get('genres', [])
         if genres:
