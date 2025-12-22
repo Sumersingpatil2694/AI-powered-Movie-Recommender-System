@@ -271,14 +271,78 @@ Edit the `apply_custom_css()` function to customize CSS.
 
 ### 3. **Movie Details** 🎬
 
-Click "View Details" to see:
+### 3. **Movie Details** 🎬
+
+Click **"View Details"** to see complete information about a selected movie:
+
 - High-resolution poster
-- Rating, year, runtime
+- Rating, release year, and runtime
 - Genres
 - Plot overview
 - Trailer (if available)
-- Top 10 cast members
-- Similar movies
+- Top cast members with photos
+- Similar movie recommendations
+
+The UI follows a **Netflix-inspired dark theme** with smooth hover animations for a premium viewing experience.
+
+---
+
+### 📺 Watch Platforms (OTT Availability)
+
+The **Movie Details** page includes a dedicated **“Available On”** section that shows where a movie can be streamed online on popular OTT platforms.
+
+#### 🔹 How It Works
+
+The application uses **TMDB (The Movie Database) – Watch Providers API** to fetch **real-time streaming availability**.
+
+- Availability is **region-specific** and currently configured for **India (IN)**
+- Supported platforms include:
+  - Netflix
+  - Amazon Prime Video
+  - JioHotstar
+  - Disney+
+  - Apple TV
+  - Google Play Movies (when available)
+
+#### 🔹 User Experience
+
+Each OTT platform is displayed as a **capsule-style button** featuring:
+- Platform logo
+- Platform name
+
+The capsules are **clickable** and redirect users to the official streaming page of the movie.
+
+**Example:**
+
+#### 🔹 Smart Fallback Handling
+
+- If a movie is not available on any OTT platform in the selected region, the app clearly displays:
+  > 📭 Currently not available on OTT platforms in India
+
+- If a platform logo is missing from the API response, a **placeholder icon** is shown to maintain UI consistency.
+
+#### 🔹 Technical Implementation
+
+**API Endpoint Used:**
+
+- Watch provider data is cached using **Streamlit caching** to:
+  - Reduce unnecessary API calls
+  - Improve overall performance
+- This feature is fully integrated inside the `display_movie_details()` function in `app.py`
+
+#### 🔹 Why This Feature Matters
+
+- Helps users instantly decide **where to watch a movie**
+- Eliminates the need to manually search across multiple OTT platforms
+- Makes the application more **practical, real-world ready, and industry-grade**
+
+#### 🔹 Key Highlights
+
+✅ Real-time OTT availability  
+✅ Region-based results (India)  
+✅ Clickable streaming links  
+✅ Clean capsule-style UI  
+✅ Graceful fallback handling
 
 ### 4. **Watchlist** ⭐
 
