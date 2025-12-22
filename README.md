@@ -271,8 +271,6 @@ Edit the `apply_custom_css()` function to customize CSS.
 
 ### 3. **Movie Details** 🎬
 
-### 3. **Movie Details** 🎬
-
 Click **"View Details"** to see complete information about a selected movie:
 
 - High-resolution poster
