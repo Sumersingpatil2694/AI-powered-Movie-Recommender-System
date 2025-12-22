@@ -46,7 +46,7 @@ def load_data():
     """
     Load the preprocessed movie data and similarity matrix
     Uses Streamlit's cache to avoid reloading on every interaction
-    
+
     Returns:
         tuple: (movies_dataframe, similarity_matrix) or (None, None) on error
     """
@@ -54,41 +54,28 @@ def load_data():
         # Load movie dictionary from pickle file
         movies_dict = pickle.load(open("movie_dict.pkl", "rb"))
         movies = pd.DataFrame(movies_dict)
-        
         # Load similarity matrix
         try:
             similarity = pickle.load(open("similarity.pkl", "rb"))
         except FileNotFoundError:
-            st.warning("⚠️ Similarity matrix not found. Building from scratch...")
+            # ⚠️ WARNING REMOVED (logic same)
             similarity = build_similarity_matrix(movies)
             
         return movies, similarity
     except Exception as e:
         st.error(f"❌ Error loading data: {e}")
         return None, None
-
 def build_similarity_matrix(movies):
     """
     Build similarity matrix if similarity.pkl is missing
     Uses CountVectorizer and cosine_similarity from sklearn
-    
-    Args:
-        movies: DataFrame containing movie data with 'tags' column
-    
-    Returns:
-        numpy.ndarray: Cosine similarity matrix
     """
     from sklearn.feature_extraction.text import CountVectorizer
-    from sklearn.metrics.pairwise import cosine_similarity
-    
+    from sklearn.metrics.pairwise import cosine_similarity 
     if 'tags' in movies.columns:
-        # Convert text tags to numerical vectors
         cv = CountVectorizer(max_features=5000, stop_words='english')
         vectors = cv.fit_transform(movies['tags']).toarray()
-        
-        # Calculate cosine similarity between all movie vectors
         similarity = cosine_similarity(vectors)
-        
         # Save for future use
         with open("similarity.pkl", "wb") as f:
             pickle.dump(similarity, f)
@@ -96,8 +83,7 @@ def build_similarity_matrix(movies):
         return similarity
     else:
         st.error("❌ 'tags' column not found in data")
-        return None
-
+        return None   
 # ===============================================================
 # 🎨 CUSTOM CSS STYLING 
 # Applies beautiful dark theme with red accents
