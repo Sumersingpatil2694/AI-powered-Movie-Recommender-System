@@ -894,10 +894,10 @@ To request a feature:
 ### Developer Information
 
 **Your Name**
-- 🐙 GitHub: [@Sumersingpatil2694](https://github.com/Sumersingpatil2694)
-- 💼 LinkedIn: (linkedin.com/in/sumersing-patil-839674234)
+- 🐙 GitHub: [Sumersingpatil2694](https://github.com/Sumersingpatil2694)
+- 💼 LinkedIn: [Sumersing Patil] (linkedin.com/in/sumersing-patil-839674234)
 - 📧 Email: sumerrajput0193@gmail.com
-- 🐦 Twitter: (https://x.com/SumerRajput2694)
+- 🐦 Twitter: [X](https://x.com/SumerRajput2694)
 
 ### Project Links
 
