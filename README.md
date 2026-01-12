@@ -28,7 +28,6 @@
 - [Screenshots](#-screenshots)
 - [Contributing](#-contributing)
 - [Future Enhancements](#-future-enhancements)
-- [License](#-license)
 - [Contact](#-contact)
 
 ---
@@ -937,70 +936,6 @@ This project was inspired by:
 
 ---
 
-## 📊 Project Stats
-
-![GitHub Stars](https://img.shields.io/github/stars/yourusername/movie-recommender-system?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/yourusername/movie-recommender-system?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/yourusername/movie-recommender-system)
-![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yourusername/movie-recommender-system)
-![GitHub Contributors](https://img.shields.io/github/contributors/yourusername/movie-recommender-system)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/yourusername/movie-recommender-system)
-
----
-
-## 💡 Tips & Best Practices
-
-### Performance Optimization
-
-```python
-# Use caching for expensive operations
-@st.cache_data(ttl=3600)
-def fetch_movie_details(movie_id):
-    return make_api_request(url, params)
-
-# Use sparse matrices for large similarity matrices
-from scipy.sparse import csr_matrix
-similarity_sparse = csr_matrix(similarity)
-```
-
-### Error Handling
-
-```python
-# Always handle API errors gracefully
-try:
-    data = fetch_movie_details(movie_id)
-    if data:
-        return process_data(data)
-except requests.exceptions.Timeout:
-    st.error("Request timed out. Please try again.")
-except requests.exceptions.ConnectionError:
-    st.error("Network connection error.")
-except Exception as e:
-    st.error(f"Unexpected error: {e}")
-```
-
-### Security Best Practices
-
-- ✅ Never commit API keys to version control
-- ✅ Use environment variables for sensitive data
-- ✅ Implement rate limiting
-- ✅ Validate all user inputs
-- ✅ Sanitize data before processing
-- ✅ Use HTTPS for API calls
-- ✅ Regularly update dependencies
-
-### Deployment Checklist
-
-- [ ] Remove debug statements
-- [ ] Set appropriate cache times
-- [ ] Configure error logging
-- [ ] Set up monitoring
-- [ ] Test on different browsers
-- [ ] Optimize images and assets
-- [ ] Configure CORS if needed
-- [ ] Set up backup strategy
-- [ ] Document deployment process
-
 ---
 
 ## ❓ FAQ
@@ -1041,9 +976,6 @@ A: Try these approaches:
 
 **Q: How much memory does the application need?**  
 A: Minimum 2GB RAM recommended. The similarity matrix can be memory-intensive for large datasets.
-
-**Q: Can I use this commercially?**  
-A: Check TMDB's terms of service for commercial use of their API. The code itself is MIT licensed.
 
 **Q: Why are some posters not loading?**  
 A: This could be due to:
