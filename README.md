@@ -895,9 +895,9 @@ To request a feature:
 
 **Your Name**
 - 🐙 GitHub: [@Sumersingpatil2694](https://github.com/Sumersingpatil2694)
-- 💼 LinkedIn: [Your Profile](linkedin.com/in/sumersing-patil-839674234)
-- 📧 Email: your.sumerrajput0193@gmail.com
-- 🐦 Twitter: [@yourhandle](https://x.com/SumerRajput2694)
+- 💼 LinkedIn: (linkedin.com/in/sumersing-patil-839674234)
+- 📧 Email: sumerrajput0193@gmail.com
+- 🐦 Twitter: (https://x.com/SumerRajput2694)
 
 ### Project Links
 
