@@ -893,7 +893,7 @@ To request a feature:
 
 ### Developer Information
 
-**Your Name**
+**Sumersung Patil**
 - 🐙 GitHub: [Sumersingpatil2694](https://github.com/Sumersingpatil2694)
 - 💼 LinkedIn: [Sumersing Patil](linkedin.com/in/sumersing-patil-839674234)
 - 📧 Email: sumerrajput0193@gmail.com
