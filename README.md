@@ -42,7 +42,7 @@
 - ✅ **AI-Powered Recommendations** - Cosine similarity algorithm
 - ✅ **Real-time Data** - TMDB API integration
 - ✅ **Smart Fuzzy Search** - Understands typos and variations
-- ✅ **Beautiful UI** - Netflix-inspired dark theme
+- ✅ **Beautiful UI** - dark theme
 - ✅ **Watchlist Management** - Save your favorite movies
 - ✅ **Trending Movies** - Weekly trending content
 - ✅ **Detailed Information** - Trailers, cast, ratings, and more
