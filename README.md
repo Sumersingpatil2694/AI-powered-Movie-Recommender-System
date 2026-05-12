@@ -1,4 +1,4 @@
-# 🎬 Movie Recommender System v3.0
+# 🎬 Movie Recommender System 
 
 <div align="center">
 
