@@ -8,7 +8,7 @@
 
 **An AI-Powered Movie Recommendation System that suggests the best movies based on your preferences**
 
-[Live Demo](https://ai-powered-movie-recommender-system-gujjmxpslzqqlvypgiju7v.streamlit.app/) • [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Screenshots](#-screenshots)
+[Live Demo](https://ai-powered-movie-recommender-system-2025.streamlit.app/) • [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Screenshots](#-screenshots)
 
 </div>
 
